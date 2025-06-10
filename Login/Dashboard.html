@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <script src="https://kit.fontawesome.com/08c5df3378.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            /* margin-top: 120px; */
+            flex-wrap: wrap;
+        }
+
+        .holder {
+            background: #f7f7f7a4;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border: 1px solid rgb(77, 73, 73);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* box-shadow: 0 0 10px rgba(19, 18, 18, 0.8); */
+            /* border: 2px solid black; */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #181818;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="holder">
+        <h1 id="mainText">Welcome </h1>        
+    </div>
+</body>
+
+</html>
+<script>
+    let mainText = document.getElementById('mainText')
+
+    let currentUser = JSON.parse(localStorage.getItem('currentUser')) || []
+
+    if (currentUser) {
+        mainText.innerHTML = `Welcome ${currentUser.userName}`
+    }
+</script>
